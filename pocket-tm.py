@@ -1,7 +1,7 @@
 # Written by Cole Lewis, 2022
 
 import sys
-
+import json
 
 class tm:
     def __init__(self):
