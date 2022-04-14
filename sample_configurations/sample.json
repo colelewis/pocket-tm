@@ -1,6 +1,6 @@
 {
-    "halting_states": [3],
-    "alphabet": [0, "x", 1],
+    "final_states": [3],
+    "alphabet": ["0", "x", "1"],
     "blank_symbol": "_",
     "transitions": [
       {
@@ -8,21 +8,63 @@
         "symbol": "0",
         "new_state": 1,
         "write": "_",
-        "direction:": "R"
+        "direction": "R"
       },
       {
         "current_state": 0,
         "symbol": "x",
         "new_state": 0,
         "write": "_",
-        "direction:": "R"
+        "direction": "R"
       },
       {
         "current_state": 0,
         "symbol": "_",
         "new_state": 3,
         "write": "_",
-        "direction:": "L"
+        "direction": "L"
+      },
+      {
+        "current_state": 1,
+        "symbol": "0",
+        "new_state": 1,
+        "write": "0",
+        "direction": "R"
+      },
+      {
+        "current_state": 1,
+        "symbol": "1",
+        "new_state": 2,
+        "write": "x",
+        "direction": "L"
+      },
+      {
+        "current_state": 1,
+        "symbol": "x",
+        "new_state": 1,
+        "write": "x",
+        "direction": "R"
+      },
+      {
+        "current_state": 2,
+        "symbol": "0",
+        "new_state": 2,
+        "write": "0",
+        "direction": "L"
+      },
+      {
+        "current_state": 2,
+        "symbol": "x",
+        "new_state": 2,
+        "write": "x",
+        "direction": "L"
+      },
+      {
+        "current_state": 2,
+        "symbol": "_",
+        "new_state": 0,
+        "write": "_",
+        "direction": "R"
       }
     ]
   }

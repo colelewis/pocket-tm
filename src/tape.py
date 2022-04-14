@@ -16,10 +16,10 @@ class tape:
         self.record[self.head] = input_symbol
 
     def move(self, direction):
-        if (direction == "<"):
+        if (direction == "L"):
             self.head -= 1
             self.grow() # a conditional is in grow(), calls everytime to check if the tape should grow
-        elif (direction == ">"):
+        elif (direction == "R"):
             self.head += 1
             self.grow()
         
