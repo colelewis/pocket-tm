@@ -2,10 +2,12 @@
 
 import sys
 
+
 class tm:
     def __init__(self):
-        self.final_state = 0
+        self.final_state = 0 # make final_states
         self.current_state = 0
+        self.blank_symbol = "_" # underscore is used by default, changed by loading configuration
         self.transitions = self.parse_transitions()
         self.tape = tape(input())
         self.render()
@@ -15,7 +17,7 @@ class tm:
         print(str(self.current_state) + ":", end='')
         self.tape.render()
 
-    def parse_transitions(self): # very, VERY particular to specified  
+    def parse_transitions(self): # rewrite to intake JSON
         lines = []
         d = {}
         with open(sys.argv[1]) as file: 
@@ -96,6 +98,7 @@ def main():
     if (len(sys.argv) != 2):
         print("Error: too many arguments.\nUsage: python3 tm.py <description text file path>")
         exit(0)
+    print("pocket-tm")
     while True:
         t = tm()
 if __name__=="__main__":
