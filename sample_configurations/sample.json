@@ -1,0 +1,28 @@
+{
+    "halting_states": [3],
+    "alphabet": [0, "x", 1],
+    "blank_symbol": "_",
+    "transitions": [
+      {
+        "current_state": 0,
+        "symbol": "0",
+        "new_state": 1,
+        "write": "_",
+        "direction:": "R"
+      },
+      {
+        "current_state": 0,
+        "symbol": "x",
+        "new_state": 0,
+        "write": "_",
+        "direction:": "R"
+      },
+      {
+        "current_state": 0,
+        "symbol": "_",
+        "new_state": 3,
+        "write": "_",
+        "direction:": "L"
+      }
+    ]
+  }

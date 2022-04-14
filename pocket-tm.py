@@ -1,6 +1,7 @@
 # Written by Cole Lewis, 2022
 import sys
 from src.tm import tm
+import json
 
 def main():
     if (len(sys.argv) > 2):
@@ -12,6 +13,7 @@ def main():
     print("pocket-tm")
     while True:
         t = tm()
+        print(json.dumps(t.transitions))
 if __name__=="__main__":
     main()
     

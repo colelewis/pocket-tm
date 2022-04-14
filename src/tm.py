@@ -8,6 +8,7 @@ class tm:
         self.blank_symbol = "_" # underscore is used by default, changed by loading configuration
         self.alphabet = "" # fix w/JSON
         self.transitions = self.parse_transitions()
+        # self.transitions = json.load(sys.argv[1])
         self.tape = tape(input("\nInput string: "))
 
         self.render()
@@ -43,4 +44,7 @@ class tm:
             self.render() # render instance of tape
             if (self.current_state == self.final_state):
                 print("accept") # fix, it has to reject on some input
+                break
+            elif (self.transitions.get(self.current_state, self.tape.read()) is None):
+                print("reject") # undefined behavior
                 break
