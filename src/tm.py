@@ -2,13 +2,13 @@ import sys, json
 from src.tape import tape
 
 class tm:
-    def __init__(self):
+    def __init__(self, input_string):
         self.final_states = []
         self.current_state = 0
         self.blank_symbol = "_" # underscore is used by default, changed by loading configuration
-        self.alphabet = [] # fix w/JSON
+        self.alphabet = []
         self.transitions = {}
-        self.tape = tape(input("\nInput string: "))
+        self.tape = tape(input_string)
 
         self.parse_transitions()
         self.render()
@@ -27,6 +27,7 @@ class tm:
         self.final_states = d['final_states']
         self.alphabet = d['alphabet']
         self.alphabet += d['blank_symbol']
+        self.blank_symbol = d['blank_symbol']
         for i in range (0, len(d['transitions'])):
             current_state = d['transitions'][i]['current_state']
             symbol = d['transitions'][i]['symbol']

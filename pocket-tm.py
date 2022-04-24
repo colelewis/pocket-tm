@@ -8,11 +8,16 @@ def main():
         print("Error: too many arguments.\nUsage: python3 pocket-tm.py <description text file path>")
         exit(0)
     elif (len(sys.argv) == 1):
-        print("one argument")
+        print("Error: too few arguments.\nUsage: python3 pocket-tm.py <description text file path>")
 
     print("pocket-tm")
     while True:
-        t = tm()
+        try:
+            instr = input()
+            t = tm(instr)
+        except EOFError:
+            break
+        
 if __name__=="__main__":
     main()
     
