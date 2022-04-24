@@ -1,9 +1,13 @@
 class tape:
-    def __init__(self, input):
+    def __init__(self, input, bs):
         self.head = 0
         self.record = self.init_tape(input)
+        self.blank_symbol = bs
 
     def init_tape(self, input):
+        if (input == ""):
+            input = self.blank_symbol
+
         l = list()
         for x in range(0, len(list(input))):
             l.append(list(input)[x])
