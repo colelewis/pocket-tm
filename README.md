@@ -3,4 +3,6 @@
 
 ### Usage
 
-Originally made for my CSCE355 class, expanded upon out of personal interest!
+`python3 pocket-tm.py path-to-JSON-configuration.file`
+
+Input strings are read through standard input, a computation trace of the Turing machine is fed to standard output.
