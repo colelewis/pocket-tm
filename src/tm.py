@@ -8,9 +8,11 @@ class tm:
         self.blank_symbol = "_" # underscore is used by default, changed by loading configuration
         self.alphabet = []
         self.transitions = {}
-        self.tape = tape(input_string, self.blank_symbol)
 
         self.parse_transitions()
+
+        self.tape = tape(input_string, self.blank_symbol)
+        
         self.render()
         self.compute()
     
